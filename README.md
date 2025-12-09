@@ -10,11 +10,23 @@ This repository serves as a **technical demonstration** for my PhD research prop
 
 ## 📂 Repository Contents
 
-* `analysis_demo.py`: The main Python script that performs statistical verification (Chi-square & Logistic Regression) on the processed data.
-* `data/processed/`: Contains the structured dataset used for this analysis.
-    * *Note: The current dataset consists of **100 simulated records** generated to mimic authentic social media linguistic patterns for demonstration purposes.*
-* `reports/`: Visualization outputs and statistical summaries.
-* `requirements.txt`: List of dependencies for reproducing the environment.
+This repository is organized into three main modules:
+
+### 1. Statistical Analysis (Hypothesis Testing)
+* `analysis_demo.py`: The core script that executes **Chi-square tests** and **Logistic Regression** to validate H1 based on the AI-labeled data.
+
+### 2. Traditional NLP Pipeline (Study 1 Exploration)
+* `src/dupe_pipeline/`: Contains the source code for the traditional text-mining workflow.
+    * `cleaning.py`: Implements Regex cleaning and Chinese tokenization (using `jieba`).
+    * `run_pipeline.py`: Orchestrates the data loading, processing, and frequency analysis.
+* `reports/figures/word_freq_top.png`: Visualization of top keywords identified in the corpus.
+
+### 3. Data Management
+* `data/raw/`:
+    * `dupe_posts_sample.csv`: The initial raw dataset containing social media posts.
+* `data/processed/`:
+    * `ai_labeled_results.csv`: **[Primary Data]** The dataset annotated by the AI Agent with 'Hedonic' vs 'Utilitarian' labels.
+    * `dupe_posts_cleaned.csv`: Intermediate data after tokenization and stopword removal.
 
 ## 🚀 Methodological Evolution (RP vs. Implementation)
 
