@@ -50,14 +50,14 @@ To ensure that the labeled data used in this demo remains scientifically credibl
 
 ```mermaid
 graph TD
-    A[Raw Data (reviews_h1.csv)] -->|Load & Clean| B(Preprocessing Module)
-    B --> C{AI Automation Agent}
-    C -->|API Call| D[Groq / Llama-3.3]
-    D -->|JSON Output| E[Guardrails / Validation]
-    E -->|Approved Labels| F[Structured Data (ai_labeled_results.csv)]
-    F --> G[Statistical Analysis (Chi-square/Logit)]
-    F --> H[Visualization (Matplotlib/Datawrapper)]
-    G --> I[Hypothesis Verification]
+    A["Raw Data (reviews_h1.csv)"] -->|Load & Clean| B("Preprocessing Module")
+    B --> C{"AI Automation Agent"}
+    C -->|API Call| D["Groq / Llama-3.3"]
+    D -->|JSON Output| E["Guardrails / Validation"]
+    E -->|Approved Labels| F["Structured Data (ai_labeled_results.csv)"]
+    F --> G["Statistical Analysis (Chi-square/Logit)"]
+    F --> H["Visualization (Matplotlib/Datawrapper)"]
+    G --> I["Hypothesis Verification"]
 ```
 
 ## 📊 Key Findings (Hypothesis 1 Verification)
