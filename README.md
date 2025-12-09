@@ -1,11 +1,28 @@
-Data Collection & Annotation
+# Consumer Behavior Analysis Demo: Dupe Products
 
-The dataset consists of 100 social media posts collected from multiple platforms.
+This repository demonstrates the statistical analysis pipeline for my research on consumer motivations regarding "dupe" products.
 
-Automated Coding: The motivation labels (Hedonic vs. Utilitarian) were generated using a custom LLM-based agent developed for this research.
+> **Note:** This is a public demo repository. The source code for the upstream AI automation agent (utilizing Groq/Llama-3 for data labeling) is maintained in a private repository to protect ongoing longitudinal research.
 
-Note: The source code for the automation agent (utilizing Groq/Llama-3 and strict schema enforcement) is currently private as it is part of an ongoing longitudinal study. It is available for review upon request by the admissions committee.
+## 📂 Repository Contents
 
-Statistical Analysis
+* `analysis_demo.py`: Python script to perform statistical verification (Chi-square & Logistic Regression).
+* `data/processed/`: Contains the AI-labeled dataset (N=100) used for this analysis.
+* `reports/`: Visualization outputs.
 
-This repository demonstrates the downstream analysis pipeline, including reproducibility checks for Hypothesis 1 (H1) using Chi-square tests and Logistic Regression.
+## 📊 Key Findings (Study 1)
+
+The analysis verifies **Hypothesis 1 (H1)**: *Hedonic motivation drives higher purchase intention for dupes.*
+
+| Motivation Type | Purchase Rate | Sample Size |
+| :--- | :--- | :--- |
+| **Hedonic** | **91.84%** | 49 |
+| **Utilitarian** | **50.00%** | 50 |
+
+* **Statistical Significance:** $\chi^2 = 20.91$, $p < 0.001$ (Highly Significant).
+
+## 🚀 How to Run
+
+1. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
