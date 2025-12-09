@@ -48,6 +48,18 @@ To ensure that the labeled data used in this demo remains scientifically credibl
 2.  **JSON Schema Enforcement:** Instead of letting the AI "chat," we force it to output strict computer-readable code (JSON).
 3.  **Deterministic Output (Temp=0):** We set the model's "creativity" to zero. This ensures that if you run the same data twice, you get the exact same result—crucial for scientific replication.
 
+```mermaid
+graph TD
+    A[Raw Data (reviews_h1.csv)] -->|Load & Clean| B(Preprocessing Module)
+    B --> C{AI Automation Agent}
+    C -->|API Call| D[Groq / Llama-3.3]
+    D -->|JSON Output| E[Guardrails / Validation]
+    E -->|Approved Labels| F[Structured Data (ai_labeled_results.csv)]
+    F --> G[Statistical Analysis (Chi-square/Logit)]
+    F --> H[Visualization (Matplotlib/Datawrapper)]
+    G --> I[Hypothesis Verification]
+```
+
 ## 📊 Key Findings (Hypothesis 1 Verification)
 
 The pipeline successfully verifies **Hypothesis 1 (H1)**: *Hedonic motivation drives higher purchase intention for dupes than utilitarian motivation.*
