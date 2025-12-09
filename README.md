@@ -55,7 +55,7 @@ graph TD
     C -->|API Call| D["Groq / Llama-3.3"]
     D -->|JSON Output| E["Guardrails / Validation"]
     E -->|Approved Labels| F["Structured Data<br/> (ai_labeled_results.csv)"]
-    F --> G["Statistical Analysis (Chi-square/Logit)"]
+    F --> G["Statistical Analysis<br/>  (Chi-square/Logit)"]
     F --> H["Visualization (Matplotlib/Datawrapper)"]
     G --> I["Hypothesis Verification"]
 ```
