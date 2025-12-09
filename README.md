@@ -46,15 +46,15 @@ To ensure that the labeled data used in this demo remains scientifically credibl
 
 1.  **Zero-shot Classification:** The model classifies text without needing thousands of training examples, using advanced prompt engineering.
 2.  **JSON Schema Enforcement:** Instead of letting the AI "chat," we force it to output strict computer-readable code (JSON).
-3.  **Deterministic Output (Temp=0):** We set the model's "creativity" to zero. This ensures that if you run the same data twice, you get the exact same result—crucial for scientific replication.
+3.  **Deterministic Output (Temp=0):** We set the model's "creativity" to zero. This ensures that if you run the same data twice, you get the exact same result-crucial for scientific replication.
 
 ```mermaid
 graph TD
-    A["Raw Data (reviews_h1.csv)"] -->|Load & Clean| B("Preprocessing Module")
+    A["Raw Data (dupe_posts_sample.csv)"] -->|Load & Clean| B("Preprocessing Module")
     B --> C{"AI Automation Agent"}
     C -->|API Call| D["Groq / Llama-3.3"]
     D -->|JSON Output| E["Guardrails / Validation"]
-    E -->|Approved Labels| F["Structured Data (ai_labeled_results.csv)"]
+    E -->|Approved Labels| F["Structured Data<br/> (ai_labeled_results.csv)"]
     F --> G["Statistical Analysis (Chi-square/Logit)"]
     F --> H["Visualization (Matplotlib/Datawrapper)"]
     G --> I["Hypothesis Verification"]
@@ -104,11 +104,11 @@ The pipeline successfully verifies **Hypothesis 1 (H1)**: *Hedonic motivation dr
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** ➡️ see the [LICENSE](LICENSE) file for details.
 
 ---
 **Contact:**
 If you wish to review the full source code of the automation agent, please contact:
 **Meng-Jen (Miya) Lin**
-*National Taiwan Normal University*
+*National Taiwan Normal University*<br>
 *Email: mengjen.miya.lin@gmail.com*
