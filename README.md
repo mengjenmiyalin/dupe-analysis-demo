@@ -26,7 +26,7 @@ This repository is organized into three main modules:
 * `data/raw/`:
     * `dupe_posts_sample.csv`: The initial raw dataset containing simulated social media posts generated for demonstration purposes.
 * `data/processed/`:
-    * `ai_labeled_results.csv`: **[Primary Data]** The dataset annotated by the AI Agent with 'Hedonic' vs 'Utilitarian' labels.
+    * `ai_labeled_results.csv`: **[Primary Data]** The dataset annotated by the AI Agent with "Hedonic" vs "Utilitarian" labels.
     * `dupe_posts_cleaned.csv`: Intermediate tokenized data ready for topic modeling.
 * `reports/`:
     * `figures/word_freq_top.png`: Visualization of top keywords identified in the corpus.
