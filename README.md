@@ -50,14 +50,29 @@ To ensure that the labeled data used in this demo remains scientifically credibl
 
 ```mermaid
 graph TD
-    A["Raw Data (dupe_posts_sample.csv)"] -->|Load & Clean| B("Preprocessing Module")
-    B --> C{"AI Automation Agent"}
-    C -->|API Call| D["Groq / Llama-3.3"]
-    D -->|JSON Output| E["Guardrails / Validation"]
-    E -->|Approved Labels| F["Structured Data<br/> (ai_labeled_results.csv)"]
-    F --> G["Statistical Analysis<br/>  (Chi-square/Logit)"]
-    F --> H["Visualization (Matplotlib/Datawrapper)"]
-    G --> I["Hypothesis Verification"]
+    subgraph Data Ingestion ["Step 1: Data Ingestion & Preprocessing"]
+        A[("Raw Social Data<br/>(Video Transcripts/Captions)")] -->|Clean & Anonymize| B["Preprocessing Module<br/>(Pandas/Regex)"]
+    end
+
+    subgraph AI Core ["Step 2: AI Coding Agent (Llama-3)"]
+        B --> C{"Agent Orchestrator"}
+        C -->|Construct System Prompt| D["Prompt Engineering<br/>(Few-shot Examples + Schema Definition)"]
+        D -->|API Request| E["LLM Inference Engine<br/>(Groq API / Llama-3.3)"]
+        E -->|Raw Response| F["Output Parser"]
+        F -->|Validate JSON Format| G{"Validation Check"}
+        G -- Invalid --> E
+        G -- Valid --> H["Structured Labels<br/>(Hedonic vs. Utilitarian)"]
+    end
+
+    subgraph Analysis ["Step 3: Analysis & Verification"]
+        H --> I["Human Verification<br/>(Pilot Sub-sample Check)"]
+        I --> J[("Final Dataset<br/>ai_labeled_results.csv")]
+        J --> K["Statistical Analysis<br/>(Chi-square/Logit)"]
+        J --> L["Visualization"]
+    end
+
+    style E fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
 ```
 
 ## 📊 Key Findings (Hypothesis 1 Verification)
